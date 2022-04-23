@@ -17,7 +17,7 @@ if (!preg_match("/^[0-9]+\n((##(start|end)|\w+ 0 0)\n)+((\w+-\w+)\n)+$/", $_POST
     exit;
 }
 
-exec("echo '".$_POST["map"]."' | ./lem_in", $output);
+exec("echo '".$_POST["map"]."' | pathfinding/pathfinding", $output);
 
 $moves = array_slice($output, array_search("#moves", $output) + 1);
 
